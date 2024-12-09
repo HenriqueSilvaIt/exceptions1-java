@@ -4,8 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+<<<<<<< HEAD
 import model.exceptions.DomainException;
 
+=======
+>>>>>>> ab69a84b5b07118e32d98e13a3c84ef4fa4f974e
 public class Reservation {
 	private Integer roomNumber;
 	private Date checkIn;
@@ -20,10 +23,14 @@ public class Reservation {
 	public Reservation() {
 		
 	}
+<<<<<<< HEAD
 	public Reservation(Integer roomNumber, Date checkIn, Date checkOut)  {
 		if (!checkOut.after(checkIn)) {
 			throw new DomainException("Erro in reservation: Check-out date must be after check-in date");
 		} 
+=======
+	public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
+>>>>>>> ab69a84b5b07118e32d98e13a3c84ef4fa4f974e
 		this.roomNumber = roomNumber;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
@@ -53,6 +60,7 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS); // isso vai converter
 		// esse valor diff que está em milisegundo para dia
 	}
+<<<<<<< HEAD
 	public void updateDates(Date checkIn, Date checkOut) {
 		
 		Date now = new Date();
@@ -64,6 +72,26 @@ public class Reservation {
 		} 
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
+=======
+<<<<<<< HEAD
+	public String updateDates(Date checkIn, Date checkOut) {
+		
+		Date now = new Date();
+		if (checkIn.before(now) || checkOut.before(now)) {
+			return "Error in reservation: Reservation dates for update must be future dates";
+		}
+		if (!checkOut.after(checkIn)) {
+			return "Erro in reservation: Check-out date must be after check-in date";
+		} 
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+		return null;
+=======
+	public void updateDates(Date checkIn, Date checkOut) {
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+>>>>>>> 4358be2cbfe5c22173bd435dc0e92f621d69e081
+>>>>>>> ab69a84b5b07118e32d98e13a3c84ef4fa4f974e
 	}
 	
 	@Override
