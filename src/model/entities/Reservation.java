@@ -48,6 +48,7 @@ public class Reservation {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS); // isso vai converter
 		// esse valor diff que está em milisegundo para dia
 	}
+<<<<<<< HEAD
 	public String updateDates(Date checkIn, Date checkOut) {
 		
 		Date now = new Date();
@@ -60,6 +61,11 @@ public class Reservation {
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 		return null;
+=======
+	public void updateDates(Date checkIn, Date checkOut) {
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+>>>>>>> 4358be2cbfe5c22173bd435dc0e92f621d69e081
 	}
 	
 	@Override

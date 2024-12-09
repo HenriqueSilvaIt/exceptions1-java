@@ -40,6 +40,7 @@ public class CriandoExcecoesPersonalizada {
 		reserva.updateDates(checkIn, checkOut);
 	
 		
+<<<<<<< HEAD
 		String error = reserva.updateDates(checkIn, checkOut);
 		if (error != null) {
 			System.out.print("Error in reservation reservation: " + error);
@@ -50,6 +51,19 @@ public class CriandoExcecoesPersonalizada {
 		}
 	}
 		
+=======
+		Date now = new Date();
+		if (checkIn.before(now) || checkOut.before(now)) {
+			System.out.println("Error in reservation: Reservation dates for update must be future dates");
+		}
+		else if (!checkOut.after(checkIn)) {
+			System.out.println("Erro in reservation: Check-out date must be after check-in date");
+		} else {
+			reserva.updateDates(checkIn, checkOut);
+			System.out.print("Reservation: " + reserva);
+		}
+		}
+>>>>>>> 4358be2cbfe5c22173bd435dc0e92f621d69e081
 		sc.close();
 }
 }
